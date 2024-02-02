@@ -27,9 +27,9 @@ public class FunctionTest {
 	};
 
 	cities.stream().map(getFirstCharFunction).forEach(System.out::println);
-	cities.stream().map(city -> {
-	    return city.charAt(0);
-	}).forEach(System.out::println);
+//	cities.stream().map(city -> {
+//	    return city.charAt(0);
+//	}).forEach(System.out::println);
 
     }
 

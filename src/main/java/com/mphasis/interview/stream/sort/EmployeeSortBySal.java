@@ -1,6 +1,7 @@
 package com.mphasis.interview.stream.sort;
 
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -19,10 +20,11 @@ public class EmployeeSortBySal {
 	Map<Gender, Long> val = employees.stream().collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
 	System.out.println(val);
 	
-	//List all distinct department names in getEmployeeDeptList
+	//List all distinct and sorted department names in getEmployeeDeptList
 	List<EmployeeDept> employeeDeptList = CommonUtils.getEmployeeDeptList();
-	List<Department> deptNames = employeeDeptList.stream().map(e -> e.getDepartment()).distinct().collect(Collectors.toList());
-	deptNames.forEach(d -> System.out.println(d));
+	List<String> deptNames = employeeDeptList.stream().map(ed -> ed.getDepartment().toString()).distinct().sorted().collect(Collectors.toList());
+//	deptNames.forEach(d -> System.out.println(d));
+	deptNames.forEach(System.out::println);
 	
 	//Display employee details who is having highest salary
 	employeeDeptList = CommonUtils.getEmployeeDeptList();
@@ -31,6 +33,9 @@ public class EmployeeSortBySal {
 	System.out.println("Top most salary employee --> : "+employeeDeptList.get(0));
 	System.out.println("Second highest salary employee --> : "+employeeDeptList.get(1));
 	System.out.println("Third highest salary employee --> : "+employeeDeptList.get(2));
+	Map<Department,String> deptEmpMap = new HashMap<>();
+	employeeDeptList.stream().map(empDept -> deptEmpMap.put(empDept.getDepartment(), empDept.getName()));
+	System.out.println(deptEmpMap);
     }	
 
 }

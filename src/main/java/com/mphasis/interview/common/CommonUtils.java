@@ -16,6 +16,14 @@ public class CommonUtils {
 		new Employee("Rashmika Balekundri", 22, 12000.00, Gender.FEMALE),
 		new Employee("Sneha Ullal", 29, 9000.00, Gender.FEMALE));
     }
+    
+    public static List<EmployeeComparable> getEmployeesComparableList() {
+	return Arrays.asList(new EmployeeComparable("Rohit Balekundri", 45, 7000.00, Gender.MALE),
+		new EmployeeComparable("Vaagish Shanmuga", 25, 10000.00, Gender.MALE),
+		new EmployeeComparable("Santosh Keerti", 65, 8000.00, Gender.MALE),
+		new EmployeeComparable("Rashmika Balekundri", 22, 12000.00, Gender.FEMALE),
+		new EmployeeComparable("Sneha Ullal", 29, 9000.00, Gender.FEMALE));
+    }
 
     public static List<Student> getStudentsList() {
 	List<Student> studentList = new ArrayList<>();
@@ -40,7 +48,6 @@ public class CommonUtils {
     public static File getFileFromResource(String fileName) throws URISyntaxException {
 	CommonUtils cu = new CommonUtils();
 	return cu.getFileFromResourceInternal(fileName);
-
     }
 
     public File getFileFromResourceInternal(String fileName) throws URISyntaxException {
