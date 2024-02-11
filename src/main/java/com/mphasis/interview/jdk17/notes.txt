@@ -1,0 +1,2 @@
+# JDK 17 new features practices:
+1. https://www.baeldung.com/java-17-new-features

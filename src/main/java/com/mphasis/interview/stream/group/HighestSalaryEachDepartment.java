@@ -42,7 +42,7 @@ public class HighestSalaryEachDepartment {
     }
 
     /**
-     * 
+     * RBS interview question and answer: List names of employee in each dept who is having highest salary in their dept
      */
     private static void printDeptEmpName() {
 	System.out.println("--------------------------------------------------");

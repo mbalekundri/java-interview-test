@@ -11,7 +11,7 @@ public class MaxMinWithCollectorsTest {
 
     static List<Employee> employeeList = Arrays.asList(
 	    new Employee("Tom Jones", 45, 15000.00),
-	    new Employee("Tom Jones", 45, 7000.00), 
+	    new Employee("Tom Hanks", 44, 7000.00), 
 	    new Employee("Ethan Hardy", 65, 8000.00),
 	    new Employee("Nancy Smith", 22, 10000.00), 
 	    new Employee("Deborah Sprightly", 29, 9000.00));
