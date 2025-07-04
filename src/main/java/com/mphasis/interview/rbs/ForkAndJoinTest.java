@@ -11,6 +11,9 @@ import java.util.concurrent.RecursiveTask;
 
 // https://howtodoinjava.com/java/forkjoin-framework-tutorial-forkjoinpool-example/
 // https://www.youtube.com/watch?v=fGuvosd-L98 [Important]
+/**
+ * Take input numbers from 1 to 100 and get sum of them  using 2 Java Threads parallel
+ */
 public class ForkAndJoinTest {
 
     // Sum up 1 to 100 using 2 threads
@@ -83,19 +86,15 @@ class MyForkJoinTask extends ForkJoinTask<Long> {
 
     @Override
     public Long getRawResult() {
-	// TODO Auto-generated method stub
 	return null;
     }
 
     @Override
     protected void setRawResult(Long value) {
-	// TODO Auto-generated method stub
-
     }
 
     @Override
     protected boolean exec() {
-	// TODO Auto-generated method stub
 	return false;
     }
 

@@ -37,7 +37,7 @@ public class EmployeeFilterTest {
 		  Comparator.comparingInt(Employee::getAge).reversed()
 		  )
 		.limit(3)
-		.collect(Collectors.toList());
+		.toList();
 	employeesList.forEach(System.out::println);
 	
 	System.out.println("=============Print employee name who is having highest salary from employee list==========");
@@ -53,8 +53,8 @@ public class EmployeeFilterTest {
 		.sorted(
 		  Comparator.comparingDouble(Employee::getSalary).reversed()
 		  )
-		.limit(1).map(e -> e.getName()).toString();
-	System.out.println(name);
+		.limit(1).map(e -> e.getName()).findAny().get();
+	System.out.println("Employee name who is having highest salary from employee list: "+name);
 	
 	System.out.println("Print employee name who is having 2nd highest and 3rd highest salary from employee list");
 	employeesList = CommonUtils.getEmployeesList().stream()
@@ -71,8 +71,8 @@ public class EmployeeFilterTest {
 				.map(emp -> emp.getName()).sorted().collect(Collectors.toList());
 	System.out.println(empNames);			
 			
-	List<String> names = Arrays.asList("Avinash", "Sneha", "Ionist", "Jagaaur", "Ullal", "elephant");
 	System.out.println("============Print names from starting with Vovels========================");
+	List<String> names = Arrays.asList("Avinash", "Sneha", "Ionist", "Jagaaur", "Ullal", "elephant");
 	
 	names = names.stream()
 			.filter(word -> word.charAt(0) == 'a' || word.charAt(0) == 'e' || word.charAt(0) == 'i' || word.charAt(0) == 'o' || word.charAt(0) == 'u' ||
